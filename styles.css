@@ -140,7 +140,7 @@ img { display: block; max-width: 100%; }
   width: 100%;
   height: 100%;
   background-color: #ededed;
-  background-image: url('assets/18.png');
+  background-image: url('assets/hero-desktop.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -148,7 +148,7 @@ img { display: block; max-width: 100%; }
 /* На мобильных background-attachment: fixed работает нестабильно — отключаем */
 @media (max-width: 800px) {
   .hero__img {
-    background-image: url('assets/0.png');
+    background-image: url('assets/hero-mobile-new.jpg');
     background-size: cover;
     background-position: top center;
     background-color: #F2EEE9;
