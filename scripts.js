@@ -155,6 +155,10 @@
         car.classList.toggle('is-at-end', atEnd);
       }
       updateEnds();
+      // Пересчёт после загрузки картинок — иначе ширина ленты ещё не известна
+      track.querySelectorAll('img').forEach(function (img) {
+        if (!img.complete) img.addEventListener('load', updateEnds);
+      });
       track.addEventListener('scroll', function () { window.requestAnimationFrame(updateEnds); }, { passive: true });
       window.addEventListener('resize', updateEnds);
     });
