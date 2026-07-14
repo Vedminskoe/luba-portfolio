@@ -137,14 +137,13 @@
       var prev = car.querySelector('.carousel__btn--prev');
       var next = car.querySelector('.carousel__btn--next');
       if (!track) return;
-      var mqMobile = window.matchMedia('(max-width: 800px)');
       function gap() { return parseFloat(getComputedStyle(track).columnGap) || 0; }
       function itemStep() {
         var img = track.querySelector('img');
         return img ? img.getBoundingClientRect().width + gap() : track.clientWidth;
       }
-      // На мобильном — ровно один файл за прокрутку, на ПК — как было
-      function step() { return mqMobile.matches ? itemStep() : track.clientWidth * 0.8; }
+      // И на мобильном, и на ПК — ровно один файл за прокрутку
+      function step() { return itemStep(); }
       if (next) next.addEventListener('click', function () { track.scrollBy({ left: step(), behavior: 'smooth' }); });
       if (prev) prev.addEventListener('click', function () { track.scrollBy({ left: -step(), behavior: 'smooth' }); });
 
@@ -213,20 +212,12 @@
     });
   }
 
-  /* ── Приветственный подъём hero-блока ── */
-  function initHeroLift() {
-    var hero = document.querySelector('.hero');
-    if (!hero) return;
-    setTimeout(function () { hero.classList.add('is-lifted'); }, 1000);
-  }
-
   function init() {
     initMobileNav();
     initHeader();
     initPackages();
     initCarousels();
     initLightbox();
-    initHeroLift();
   }
 
   // появление — сразу, чтобы не было моргания контента
