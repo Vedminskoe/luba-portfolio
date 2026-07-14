@@ -121,7 +121,7 @@ img { display: block; max-width: 100%; }
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.75);
   border-bottom: 1px solid #fff;
   z-index: 10;
   transition: transform .35s ease;
